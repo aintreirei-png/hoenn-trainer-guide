@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hoenn Trainer Guide</title>
+  <meta name="description" content="A student project guide to Pokémon Ruby, Sapphire, and Emerald.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="theme-color" content="#0d6efd">
+
+  <!-- Bootstrap CSS (official CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Our own CSS loads AFTER Bootstrap so it can refine it -->
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Sticky header keeps navigation visible while scrolling. -->
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+          <img src="favicon.svg" alt="" width="28" height="28">
+          Hoenn Trainer Guide
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#mainNav" aria-controls="mainNav"
+                aria-expanded="false" aria-label="Toggle navigation menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#starters">Starters</a></li>
+            <li class="nav-item"><a class="nav-link" href="#guide">Guide</a></li>
+            <li class="nav-item"><a class="nav-link" href="#pokedex">Pokédex</a></li>
+            <li class="nav-item"><a class="nav-link" href="#routes">Routes</a></li>
+            <li class="nav-item"><a class="nav-link" href="#tips">Tips</a></li>
+            <li class="nav-item"><a class="nav-link" href="#videos">Videos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+            <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- A. HOME / HERO -->
+    <section id="home" class="hero py-5">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-md-7">
+            <p class="hero-eyebrow">Your Hoenn adventure starts here</p>
+            <h1 class="hero-title"><span>Hoenn</span> <span class="hero-title-accent">Trainer Guide</span></h1>
+            <p class="lead fw-semibold hero-tagline">Explore islands. Meet your team. <span>Become a Champion.</span></p>
+            <p class="hero-description">
+              Hoenn is a region of islands, oceans, forests, and volcanoes. It is the setting of
+              Pokémon Ruby, Sapphire, and Emerald. This guide helps new trainers with the starter
+              Pokémon, the first few routes, and the first Gym.
+            </p>
+            <a href="#guide" class="btn btn-danger btn-lg btn-ripple">View the Pokémon Guide</a>
+          </div>
+          <div class="col-md-5 text-center">
+            <img src="favicon.svg" class="img-fluid hero-image" alt="Red and white Poké Ball">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- B. STARTER SLIDER (Bootstrap Carousel) -->
+    <section id="starters" class="py-5 bg-white">
+      <div class="container">
+        <h2 class="section-title">Starter Pokémon Slider</h2>
+        <p>Use the Previous and Next buttons to look at the three Hoenn starters.</p>
+
+        <div id="starterCarousel" class="carousel slide carousel-box service-effect mx-auto" data-bs-ride="false">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://img.pokemondb.net/artwork/large/treecko.jpg" class="d-block mx-auto slide-img" alt="Treecko, the green Grass-type Wood Gecko Pokémon">
+              <div class="carousel-caption-box"><h3 class="h5 mb-0">Treecko</h3><small>Grass type</small></div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://img.pokemondb.net/artwork/large/torchic.jpg" class="d-block mx-auto slide-img" alt="Torchic, the orange Fire-type Chick Pokémon">
+              <div class="carousel-caption-box"><h3 class="h5 mb-0">Torchic</h3><small>Fire type</small></div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://img.pokemondb.net/artwork/large/mudkip.jpg" class="d-block mx-auto slide-img" alt="Mudkip, the blue Water-type Mud Fish Pokémon">
+              <div class="carousel-caption-box"><h3 class="h5 mb-0">Mudkip</h3><small>Water type</small></div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#starterCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#starterCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <p class="credit text-center mt-2">Images: <a href="https://pokemondb.net/" target="_blank" rel="noopener">Pokémon Database</a></p>
+      </div>
+    </section>
+
+    <!-- C. POKEMON GUIDE CARDS: 1 column phone, 2 tablet, 3 desktop -->
+    <section id="guide" class="py-5">
+      <div class="container">
+        <h2 class="section-title">Pokémon Guide</h2>
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 guide-card service-effect">
+              <img src="https://img.pokemondb.net/artwork/large/treecko.jpg" class="card-img-top card-img-fixed" alt="Treecko artwork">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h5">Treecko</h3>
+                <p class="mb-1"><span class="badge text-bg-success">Grass</span></p>
+                <p class="card-text">A quick and calm gecko. It is fast and good against Water and Rock Pokémon, which helps in the first Gym.</p>
+                <a href="https://pokemondb.net/pokedex/treecko" target="_blank" rel="noopener" class="btn btn-primary mt-auto">Treecko on Pokémon Database</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 guide-card service-effect">
+              <img src="https://img.pokemondb.net/artwork/large/torchic.jpg" class="card-img-top card-img-fixed" alt="Torchic artwork">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h5">Torchic</h3>
+                <p class="mb-1"><span class="badge text-bg-danger">Fire</span></p>
+                <p class="card-text">A small chick that keeps a fire burning inside. It grows into a strong Fire and Fighting Pokémon.</p>
+                <a href="https://pokemondb.net/pokedex/torchic" target="_blank" rel="noopener" class="btn btn-primary mt-auto">Torchic on Pokémon Database</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 guide-card service-effect">
+              <img src="https://img.pokemondb.net/artwork/large/mudkip.jpg" class="card-img-top card-img-fixed" alt="Mudkip artwork">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h5">Mudkip</h3>
+                <p class="mb-1"><span class="badge text-bg-primary">Water</span></p>
+                <p class="card-text">A sturdy mud fish and a great choice for the Rustboro Gym.</p>
+                <a href="https://pokemondb.net/pokedex/mudkip" target="_blank" rel="noopener" class="btn btn-primary mt-auto">Mudkip on Pokémon Database</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MINI POKEDEX: search, type filter, details popup (data is in script.js) -->
+    <section id="pokedex" class="py-5">
+      <div class="container">
+        <h2 class="section-title">Mini Pokédex</h2>
+        <p>A small list of Pokémon you can meet in the early game. This is not a full Pokédex. Use the links inside each popup for complete information.</p>
+
+        <div class="row g-3 mb-3">
+          <div class="col-12 col-md-7">
+            <label for="dexSearch" class="form-label">Search by name</label>
+            <input type="search" class="form-control" id="dexSearch" placeholder="Example: Ralts">
+          </div>
+          <div class="col-12 col-md-5">
+            <label for="dexType" class="form-label">Filter by type</label>
+            <select class="form-select" id="dexType">
+              <option value="all">All types</option>
+            </select>
+          </div>
+        </div>
+
+        <p id="dexCount" class="dex-count" aria-live="polite">
+          <strong id="dexVisibleCount" class="dex-count-number">0</strong>
+          <span><strong class="dex-count-label">Pokémon shown</strong><small id="dexTotalCount">0 Pokémon in this Mini Pokédex</small></span>
+        </p>
+
+        <!-- Cards are added here by script.js -->
+        <div class="row g-3" id="dexList"></div>
+        <p id="dexEmpty" class="alert alert-warning d-none" role="status">No Pokémon match your search. Try another name or type.</p>
+      </div>
+    </section>
+
+    <!-- Popup (Bootstrap modal) used for Pokédex details -->
+    <div class="modal fade" id="pokemonModal" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title h5" id="modalTitle">Pokémon</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            <img id="modalImage" src="" alt="" class="img-fluid dex-modal-img">
+            <p id="modalTypes" class="mt-2 mb-2"></p>
+            <p id="modalInfo" class="text-start"></p>
+            <div class="evolution-panel text-start">
+              <h4 class="h6 mb-2">Evolution</h4>
+              <ul id="modalEvolutions" class="mb-0"></ul>
+            </div>
+            <p class="text-start mb-0"><strong>Where to find it:</strong> <span id="modalWhere"></span></p>
+          </div>
+          <div class="modal-footer">
+            <a id="modalLink" href="#" target="_blank" rel="noopener" class="btn btn-primary">More on Pokémon Database</a>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- D. HOENN ROUTES -->
+    <section id="routes" class="py-5 bg-white">
+      <div class="container">
+        <h2 class="section-title">Hoenn Routes</h2>
+        <p>These five places are where most trainers begin. You usually visit them in this order:</p>
+        <ol class="route-list">
+          <li><strong>Littleroot Town:</strong> your home town and where the adventure starts.</li>
+          <li><strong>Route 101:</strong> a short path where you get your starter Pokémon.</li>
+          <li><strong>Oldale Town:</strong> the first town with a Poké Mart for supplies.</li>
+          <li><strong>Route 102:</strong> a good place to catch your first wild Pokémon and train.</li>
+          <li><strong>Rustboro City:</strong> a larger city with the first Gym.</li>
+        </ol>
+        <a href="https://www.serebii.net/pokearth/hoenn/index.shtml" target="_blank" rel="noopener" class="btn btn-outline-primary">Serebii Hoenn Map</a>
+        <a href="https://bulbapedia.bulbagarden.net/wiki/Hoenn" target="_blank" rel="noopener" class="btn btn-outline-primary">Bulbapedia: Hoenn</a>
+      </div>
+    </section>
+
+    <!-- E. GAME TIPS -->
+    <section id="tips" class="py-5">
+      <div class="container">
+        <h2 class="section-title">Game Tips</h2>
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 guide-card">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h5">Choosing Your Hoenn Starter</h3>
+                <p class="card-text">All three starters can finish the game. Pick the one you like best. Mudkip and Treecko have an easier time at the first Gym.</p>
+                <a href="https://bulbapedia.bulbagarden.net/wiki/Starter_Pok%C3%A9mon" target="_blank" rel="noopener" class="btn btn-primary mt-auto">Read about starters</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 guide-card">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h5">Finding Pokémon on Route 102</h3>
+                <p class="card-text">Walk in the tall grass to meet wild Pokémon. Catch a few different ones so your team is not only one type.</p>
+                <a href="https://bulbapedia.bulbagarden.net/wiki/Hoenn_Route_102" target="_blank" rel="noopener" class="btn btn-primary mt-auto">Route 102 details</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 guide-card">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h5">Preparing for the Rustboro Gym</h3>
+                <p class="card-text">The leader uses Rock-type Pokémon. Level up your team, buy Potions, and bring a Water or Grass Pokémon if you can.</p>
+                <a href="https://bulbapedia.bulbagarden.net/wiki/Rustboro_Gym" target="_blank" rel="noopener" class="btn btn-primary mt-auto">Rustboro Gym details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- F. GAMEPLAY VIDEO HIGHLIGHT -->
+    <section id="videos" class="py-5 bg-white">
+      <div class="container">
+        <h2 class="section-title">Hoenn Gameplay Highlight</h2>
+        <p>Watch this Pokémon gameplay video, then explore more guides below.</p>
+        <div class="video-feature mb-4">
+          <div class="ratio ratio-16x9 video-frame">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/QCa3q39G3ps?rel=0"
+              title="Pokémon gameplay video"
+              loading="lazy"
+              referrerpolicy="origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+          <p class="small text-muted mt-2 mb-0">If playback is blocked in local preview, watch the video on YouTube.</p>
+        </div>
+        <div class="video-links d-flex flex-wrap justify-content-center gap-2">
+          <a href="https://www.youtube.com/watch?v=QCa3q39G3ps" target="_blank" rel="noopener" class="btn btn-danger">Watch video on YouTube</a>
+          <a href="https://www.youtube.com/results?search_query=Pokemon+Ruby+walkthrough" target="_blank" rel="noopener" class="btn btn-outline-danger">Ruby videos</a>
+          <a href="https://www.youtube.com/results?search_query=Pokemon+Sapphire+walkthrough" target="_blank" rel="noopener" class="btn btn-outline-danger">Sapphire videos</a>
+          <a href="https://www.youtube.com/results?search_query=Pokemon+Emerald+walkthrough" target="_blank" rel="noopener" class="btn btn-outline-danger">Emerald videos</a>
+          <a href="https://www.serebii.net/emerald/" target="_blank" rel="noopener" class="btn btn-outline-primary">Serebii Emerald guide</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- G. FAQ (Bootstrap Accordion) -->
+    <section id="faq" class="py-5">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                What is the difference between Ruby, Sapphire, and Emerald?
+              </button>
+            </h3>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Ruby and Sapphire are the first two games and have a few version-exclusive Pokémon. Emerald came later, adds extra features like the Battle Frontier, and mixes content from both.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                Who are the Hoenn starter Pokémon?
+              </button>
+            </h3>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Treecko (Grass), Torchic (Fire), and Mudkip (Water). You choose one at the start of the game.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                How do I find Pokémon on routes?
+              </button>
+            </h3>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Walk through tall grass to start wild encounters. Water routes need Surf. Each route has different Pokémon, so check Pokémon Database or Serebii for lists.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                Who is the first Gym Leader in Rustboro City?
+              </button>
+            </h3>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Roxanne is the Rustboro Gym Leader. She uses Rock-type Pokémon, so Water and Grass moves work well against her.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- H. FEEDBACK FORM (frontend demo only) -->
+    <section id="feedback" class="py-5 bg-white">
+      <div class="container form-box">
+        <h2 class="section-title">Feedback Form</h2>
+        <p class="text-muted">This is a frontend demonstration. Your message is not sent to a server.</p>
+
+        <form id="feedbackForm" novalidate>
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" required minlength="2">
+            <div class="invalid-feedback">Please enter your name (at least 2 characters).</div>
+          </div>
+          <div class="mb-3">
+            <label for="game" class="form-label">Favorite game</label>
+            <select class="form-select" id="game" required>
+              <option value="">Choose a game...</option>
+              <option>Pokémon Ruby</option>
+              <option>Pokémon Sapphire</option>
+              <option>Pokémon Emerald</option>
+            </select>
+            <div class="invalid-feedback">Please choose a favorite game.</div>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="4" required minlength="10"></textarea>
+            <div class="invalid-feedback">Please write a message (at least 10 characters).</div>
+          </div>
+          <button type="submit" class="btn btn-danger btn-ripple">Submit Feedback</button>
+        </form>
+        <div id="formSuccess" class="alert alert-success mt-3 d-none" role="status">
+          Thank you! Your form passed validation. (Demo only, nothing was sent.)
+        </div>
+      </div>
+    </section>
+
+    <!-- I. STATIC COUNTERS -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row g-3 text-center">
+          <div class="col-12 col-sm-4"><div class="counter-box"><span class="counter-number">3</span><br>Hoenn games</div></div>
+          <div class="col-12 col-sm-4"><div class="counter-box"><span class="counter-number">3</span><br>Starter Pokémon</div></div>
+          <div class="col-12 col-sm-4"><div class="counter-box"><span class="counter-number">5</span><br>Featured early-game locations</div></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- J. FOOTER -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-12 col-md-6">
+          <h2 class="h5">Hoenn Trainer Guide</h2>
+          <p class="small mb-0">A student project for ITS 300 Website Development. This is an unofficial fan project and is not affiliated with Nintendo, Game Freak, or The Pokémon Company. Pokémon names and images belong to their owners.</p>
+        </div>
+        <div class="col-12 col-md-6">
+          <h2 class="h5">References</h2>
+          <ul class="list-unstyled small mb-0">
+            <li><a href="https://pokemondb.net/" target="_blank" rel="noopener">Pokémon Database</a></li>
+            <li><a href="https://www.serebii.net/pokearth/hoenn/index.shtml" target="_blank" rel="noopener">Serebii Pokéarth</a></li>
+            <li><a href="https://bulbapedia.bulbagarden.net/wiki/Hoenn" target="_blank" rel="noopener">Bulbapedia: Hoenn</a></li>
+            <li><a href="https://getbootstrap.com/docs/5.3/" target="_blank" rel="noopener">Bootstrap documentation</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="small text-center mt-3 mb-0">&copy; <span id="year">2026</span> Seno project. Fan-made, for learning only.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS bundle (official CDN), then our script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

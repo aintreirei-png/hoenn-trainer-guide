@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" fill="none">
+  <defs>
+    <linearGradient id="sky" x1="800" y1="0" x2="800" y2="620" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9EDCF3"/>
+      <stop offset="1" stop-color="#E9F6E9"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="800" y1="430" x2="800" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#61C7D2"/>
+      <stop offset="1" stop-color="#2586B4"/>
+    </linearGradient>
+    <linearGradient id="island" x1="800" y1="330" x2="800" y2="740" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A4D889"/>
+      <stop offset="1" stop-color="#4EAA83"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h1600v590H0z"/>
+  <circle cx="1280" cy="170" r="76" fill="#FFE995"/>
+  <g fill="#fff" opacity=".76">
+    <path d="M195 210c8-32 38-54 73-54 29 0 54 15 67 38 10-7 22-11 35-11 36 0 65 29 65 65H181c0-17 5-30 14-38Z"/>
+    <path d="M1000 290c7-25 31-43 58-43 22 0 42 12 52 30 8-6 18-9 28-9 28 0 51 23 51 51H990c0-13 4-23 10-29Z"/>
+  </g>
+  <path fill="#8CC9B4" d="M0 465c170-80 282-84 440-10 152 71 260 62 391-21 148-94 264-91 423 0 132 76 224 73 346 22v192H0V465Z"/>
+  <path fill="url(#sea)" d="M0 570c204-42 374-35 544 10 158 41 280 29 433-18 224-68 427-37 623 18v420H0V570Z"/>
+  <path fill="url(#island)" d="M362 687c98-79 169-172 226-281 37-70 67-93 113-100 39 27 62 78 86 130 43 91 92 165 197 251 86 70 183 106 273 122-99 73-221 105-369 100l-302-9c-117-4-222-50-310-137 34-18 61-42 86-76Z"/>
+  <path fill="#438E70" d="M572 694c52-82 91-179 127-293 16-51 27-76 48-95 10 29 24 61 42 94-29 117-62 215-102 294 101 14 201 29 298 48 50 10 101 22 152 38-106 35-218 49-335 42l-302-9c-78-2-150-25-215-67 88-28 181-44 287-52Z" opacity=".48"/>
+  <path stroke="#D8F3D2" stroke-linecap="round" stroke-width="11" d="M314 810c173-64 357-84 544-59 155 21 297 59 423 113"/>
+  <g fill="#347E69">
+    <path d="M392 576c-24-53-6-99 39-116 4 46-9 87-39 116Zm-13-9c-47-26-59-72-31-111 27 34 38 72 31 111Zm22 5c-6-56 23-94 71-98-9 44-31 77-71 98Z"/>
+    <path d="M1096 633c-22-47-6-87 34-102 4 41-8 77-34 102Zm-11-8c-41-23-52-63-27-97 24 30 33 63 27 97Zm20 4c-5-49 20-82 62-86-8 39-27 68-62 86Z"/>
+    <path d="M1190 669c-16-35-4-65 25-76 3 31-6 58-25 76Zm-8-6c-31-17-39-47-20-72 18 23 25 47 20 72Zm15 3c-4-36 15-61 46-64-6 29-20 51-46 64Z"/>
+  </g>
+  <g stroke="#E9FAF7" stroke-linecap="round" stroke-width="6" opacity=".62">
+    <path d="M113 690h144M1320 770h170M190 900h105M1340 920h125M45 810h100"/>
+  </g>
+</svg>
